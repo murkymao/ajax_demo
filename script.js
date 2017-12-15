@@ -1,13 +1,13 @@
 window.onload = function () {
 
     document.querySelector('#shop_ip').onclick = function () {
-        ajaxGet();
+        ajaxGet('ip.php');
 
     }
 
 };
 
-function ajaxGet() {
+function ajaxGet(url) {
     var request = new XMLHttpRequest();
 
     request.onreadystatechange = function () {
@@ -17,7 +17,7 @@ function ajaxGet() {
         }
     };
 
-    request.open('GET', 'ip.php');
+    request.open('GET', url);
     request.send();
 
 }
